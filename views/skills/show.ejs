@@ -1,6 +1,24 @@
 <%- include('../partials/header') %>
 
-<h3><%= skill.skill %></h3>
+<h2><%= skill.skill %></h2>
 <h3>Score: <%= skill.score %></h3>
+<div id="buttons">
+
+    <form action="/skills/<%= skill.id %>?_method=PUT" method="POST">
+        <button id="up" type="submit"></button>
+    </form>
+    
+    <form action="/skills/<%= skill.id %>?_method=PUT" method="POST">
+        <button id="down" type="submit"></button>
+    </form>
+    
+
+    <form action="/skills/<%= skill.id %>?_method=DELETE"
+        method="POST"
+        class="button-form">
+      <button type="submit" id="delete"></button>
+    </form>
+
+</div>
 
 <%- include('../partials/footer') %>

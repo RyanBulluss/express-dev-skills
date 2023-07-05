@@ -7,6 +7,14 @@ function index(req, res) {
     })
 }
 
+function increase(req, res) {
+    Skill.increaseScore(req.params.id);
+}
+
+function decrease(req, res) {
+    Skill.decreaseScore(req.params.id);
+}
+
 function show(req, res) {
     res.render('skills/show', {
         skill: Skill.getOne(req.params.id),
@@ -14,7 +22,29 @@ function show(req, res) {
       });
 }
 
+function newSkill(req, res) {
+    res.render('skills/new', { title: 'New Skill' })
+}
+
+function deleteSkill(req, res) {
+    Skill.deleteOne(req.params.id);
+    res.redirect('/skills');
+}
+
+function create(req, res) {
+    console.log(req.body)
+
+    Skill.create(req.body);
+
+    res.redirect('/skills')
+}
+
 module.exports = {
     index,
-    show
+    show,
+    new: newSkill, 
+    delete: deleteSkill,
+    create,
+    increase,
+    decrease
 }

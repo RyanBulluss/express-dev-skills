@@ -5,8 +5,20 @@ var skillsCtrl = require('../controllers/skills');
 // Get Skills
 router.get('/', skillsCtrl.index);
 
+// Get New
+router.get('/new', skillsCtrl.new);
+
 // GET /skills/:id
 router.get('/:id', skillsCtrl.show);
 
+// POST /todos
+router.post('/', skillsCtrl.create);
+
+// DELETE /todos/:id
+router.delete('/:id', skillsCtrl.delete);
+
+router.put('/:id', skillsCtrl.increase);
+
+router.put('/:id', skillsCtrl.decrease);
 
 module.exports = router;
