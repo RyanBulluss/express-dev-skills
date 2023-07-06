@@ -5,44 +5,46 @@ const skills = [
     {id: 3, skill: 'Node JS', score: 3}
   ];
 
-  function increaseScore(id) {
-    id.parseInt(id);
-    const skill = skills.find(skill => skill.id === id);
-    skill.score++;
-  }
+function increaseScore(id) {
+  id = parseInt(id);
+  const skill = skills.find(skill => skill.id === id);
+  if (skill.score > 9) return;
+  skill.score++;
+}
 
-  function decreaseScore(id) {
-    id.parseInt(id);
-    const skill = skills.find(skill => skill.id === id);
-    skill.score--;
-  }
+function decreaseScore(id) {
+  id = parseInt(id);
+  const skill = skills.find(skill => skill.id === id);
+  if (skill.score < 1) return;
+  skill.score--;
+}
 
-  function getOne(id) {
-    id = parseInt(id);
-    return skills.find(skill => skill.id === id);
-  }
+function getOne(id) {
+  id = parseInt(id);
+  return skills.find(skill => skill.id === id);
+}
 
-  function getAll() {
-    return skills;
-  }
+function getAll() {
+  return skills;
+}
 
-  function deleteOne(id) {
-    id = parseInt(id);
-    const idx = skills.findIndex(skill => skill.id === id);
-    skills.splice(idx, 1);
-  }
+function deleteOne(id) {
+  id = parseInt(id);
+  const idx = skills.findIndex(skill => skill.id === id);
+  skills.splice(idx, 1);
+}
 
-  function create(skill) {
-    skill.id = skills.length;
-    skill.score = 0;
-    skills.push(skill)
-  }
+function create(skill) {
+  skill.id = skills.length;
+  skill.score = 0;
+  skills.push(skill)
+}
 
-  module.exports = {
-    getAll,
-    getOne,
-    deleteOne,
-    create,
-    increaseScore,
-    decreaseScore
-  }
+module.exports = {
+  getAll,
+  getOne,
+  deleteOne,
+  create,
+  increaseScore,
+  decreaseScore
+}

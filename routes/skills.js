@@ -11,14 +11,14 @@ router.get('/new', skillsCtrl.new);
 // GET /skills/:id
 router.get('/:id', skillsCtrl.show);
 
-// POST /todos
+// POST /skills
 router.post('/', skillsCtrl.create);
 
-// DELETE /todos/:id
+// DELETE /skills/:id
 router.delete('/:id', skillsCtrl.delete);
 
-router.put('/:id', skillsCtrl.increase);
+router.put('/:id/increase', skillsCtrl.increase);
 
-router.put('/:id', skillsCtrl.decrease);
+router.put('/:id/decrease', skillsCtrl.decrease);
 
 module.exports = router;

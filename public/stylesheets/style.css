@@ -61,17 +61,25 @@ footer {
 }
 
 form > button{
-  height: 4vmin;
-  width: 4vmin;
+  height: 3vmin;
+  width: 3vmin;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 2vmin;
+  background-size: 1.5vmin;
   border-radius: 20%;
   background-color: darkorange;
+  margin: 0.5vmin;
+  border: 0;
 }
 
 #buttons {
   display: flex;
+
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: orange;
 }
 
 #up {
@@ -87,6 +95,7 @@ form > button{
 }
 
 #save-skill {
-  width: 10vmin;
-  height: 4vmin; 
+  width: 9vmin;
+  height: 3vmin; 
+  border-radius: 5vmin;
 }

@@ -9,11 +9,19 @@ function index(req, res) {
 
 function increase(req, res) {
     Skill.increaseScore(req.params.id);
+    res.redirect(`/skills/${req.params.id}`)
 }
 
 function decrease(req, res) {
     Skill.decreaseScore(req.params.id);
+    res.redirect(`/skills/${req.params.id}`)
 }
+
+function update(req, res) {
+    req.body.learnt = !!req.body.learnt;
+    Skill.update(req.params.id, req.body);
+    res.redirect(`/skills/${req.params.id}`)
+  }
 
 function show(req, res) {
     res.render('skills/show', {

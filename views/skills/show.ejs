@@ -4,11 +4,11 @@
 <h3>Score: <%= skill.score %></h3>
 <div id="buttons">
 
-    <form action="/skills/<%= skill.id %>?_method=PUT" method="POST">
+    <form action="<%= skill.id %>/increase?_method=PUT" method="POST">
         <button id="up" type="submit"></button>
     </form>
     
-    <form action="/skills/<%= skill.id %>?_method=PUT" method="POST">
+    <form action="<%= skill.id %>/decrease?_method=PUT" method="POST">
         <button id="down" type="submit"></button>
     </form>
     
